@@ -5,12 +5,13 @@ use App\Http\Controllers\dashboard12;
 use App\Http\Controllers\pesanan12;
 use App\Http\Controllers\kategori12;
 use App\Http\Controllers\produk12;
+use App\Http\Controllers\dashboard;
 
 
 
 Route::group(['middleware' => ['auth']], function(){
     Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[dashboard12::class, 'index'])->name('dashboard');
+    Route::get('/dashboard',[dashboard::class, 'index'])->name('dashboard');
     Route::get('/produk', [produk12::class, 'index'])->name('produk');
     Route::get('/produkCreate', [produk12::class, 'create'])->name('produkCreate');
     Route::get('/pesananCreate', [pesanan12::class, 'create'])->name('pesananCreate');
