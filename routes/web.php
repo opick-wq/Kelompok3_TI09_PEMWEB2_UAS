@@ -6,6 +6,7 @@ use App\Http\Controllers\pesanan12;
 use App\Http\Controllers\kategori12;
 use App\Http\Controllers\produk12;
 use App\Http\Controllers\dashboard;
+use App\Http\Controllers\detailproduk;
 
 
 
@@ -43,6 +44,8 @@ Route::group(['middleware' => ['auth']], function(){
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/homefrontend',[detailproduk::class, 'index'])->name('detailproduk');
 
 Route::get('/', function () {
     return view('welcome');
