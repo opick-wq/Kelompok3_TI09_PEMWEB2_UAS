@@ -1,71 +1,73 @@
 @extends('admin.layout.app')
 @section('konten')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-@if (Auth::user()->role != 'pelanggan')
-<h1>Selamat Datang Di Halaman Produk</h1>
-
-<h1 class="mt-4">Tables</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-    <li class="breadcrumb-item active">Tables</li>
-</ol>
-<div class="card mb-4">
-    <div class="card-body">
-        DataTables is a third party plugin that is used to generate the demo table below. For more
-        information about DataTables, please visit the
-        <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-        .
+<br>
+<br>
+<h1 >Form Input Produk</h1>
+<div class="col-8 ">
+<form method="POST" action="{{url('admin/produkUpdate')}}"
+enctype="multipart/form-data" >
+{{ csrf_field() }}
+  <div class="form-group row">
+  <input type="hidden" name="id" value="{{$p->id}}">
+    <label for="text1" class="col-4 col-form-label">Kode</label> 
+    <div class="col-8">
+      <input id="text1" name="kode" type="text" class="form-control" value="{{$p->kode}}">
     </div>
+  </div>
+  <div class="form-group row">
+    <label for="text" class="col-4 col-form-label">Nama Produk</label> 
+    <div class="col-8">
+      <input id="text" name="nama" type="text" class="form-control" value="{{$p->nama}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text2" class="col-4 col-form-label">Harga Jual</label> 
+    <div class="col-8">
+      <input id="text2" name="harga_jual" type="text" class="form-control" value="{{$p->harga_jual}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text3" class="col-4 col-form-label">Harga Beli</label> 
+    <div class="col-8">
+      <input id="text3" name="harga_beli" type="text" class="form-control" value="{{$p->harga_beli}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text4" class="col-4 col-form-label">Stok</label> 
+    <div class="col-8">
+      <input id="text4" name="stok" type="text" class="form-control" value="{{$p->stok}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text4" class="col-4 col-form-label">Minimal Stok</label> 
+    <div class="col-8">
+      <input id="text4" name="min_stok" type="text" class="form-control" value="{{$p->min_stok}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="textarea" class="col-4 col-form-label">Deskripsi</label> 
+    <div class="col-8">
+      <input type="text" name="deskripsi" cols="40" rows="5" class="form-control" value="{{$p->deskripsi}}"></input>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="select" class="col-4 col-form-label">Kategori Produk</label> 
+    <div class="col-8">
+      <select id="select" name="kategori_produk_id" class="custom-select">
+      @foreach ($kategori as $db) 
+      <option value="{{$db->id}}">{{$db->nama}}</option>
+        @endforeach
+      </select>
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
 </div>
-<div class="card mb-4">
-    <div class="card-header">
-        <!-- <i class="fas fa-table me-1"></i> -->
-
-        @if (Auth::user()->role == 'admin')
-        <a class="btn btn-success" href="{{url('produk/create')}}">Create Produk</a>
-        @endif
-    </div>
-    <div class="card-body">
-        <table id="datatablesSimple">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Kode</th>
-                    <th>Nama</th>
-                    <th>Harga_Jual</th>
-                    <th>Harga_Beli</th>
-                    <th>Stok</th>
-                    <th>Min_Stok</th>
-                    <th>Kategori_Produk_ID</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @php $no = 1; @endphp
-                @foreach($produk as $p)
-                <tr>
-                    <td>{{$no++}}</td>
-                    <td>{{$p->kode}}</td>
-                    <td>{{$p->nama}}</td>
-                    <td>{{$p->harga_jual}}</td>
-                    <td>{{$p->harga_beli}}</td>
-                    <td>{{$p->stok}}</td>
-                    <td>{{$p->min_stok}}</td>
-                    <td>{{$p->deskripsi}}</td>
-                    <td>{{$p->kategori_produk_id}}</td>
-                    <td>
-                        <a class="btn btn-primary">View</a>
-                        <a class="btn btn-primary">Edit</a>
-                        <a class="btn btn-primary" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-</div>
-@else
-
-@include('admin.access_denied')
-@endif
+</form>
 @endsection

@@ -1,9 +1,5 @@
 @extends('admin.layout.app')
 @section('konten')
-
-
-
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -11,7 +7,7 @@
 <br>
 <h1 >Form Input Produk</h1>
 <div class="col-8 ">
-<form method="POST" action="{{url('produk/store')}}" enctype="multipart/form-data" >
+<form method="POST" action="{{url('admin/produkStore')}}" enctype="multipart/form-data" >
 {{ csrf_field() }}
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Kode</label> 

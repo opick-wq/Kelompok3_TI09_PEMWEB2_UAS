@@ -1,4 +1,4 @@
-@extends('praktikum12.admin.layout.app')
+@extends('admin.layout.app')
 @section('konten')
 <h1 class="mt-4">Table Pesanan</h1>
 <ol class="breadcrumb mb-4">
@@ -8,7 +8,7 @@
 </ol>
 <div class="card mb-4">
 <div class="card-header">
-<a class="btn btn-primary" href="{{url('admin4/pesananCreate')}}">Create</a>
+<a class="btn btn-primary" href="{{url('admin/pesananCreate')}}">Create</a>
 </div>
 <div class="card-body">
 <table id="datatablesSimple">
@@ -40,8 +40,8 @@
         <td>{{$p->deskripsi}}</td>
         <td>{{$p->nama_produk}}</td>
         <td>
-<a href="{{url('admin4/pesananEdit/'.$p->id)}}"  class="btn btn-warning">Edit</a>
-<a href="{{url('admin4/pesananDelete/'.$p->id)}}" class="btn btn-danger">Delete</a>
+<a href="{{url('admin/pesananEdit/'.$p->id)}}"  class="btn btn-warning">Edit</a>
+<a href="{{url('admin/pesananDelete/'.$p->id)}}" class="btn btn-danger">Delete</a>
 </td>
         </tr>
         @php $no++
