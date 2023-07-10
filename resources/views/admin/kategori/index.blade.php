@@ -1,5 +1,6 @@
 @extends('admin.layout.app')
 @section('konten')
+@if(Auth::user()-> role != 'pelanggan')
 <h1 class="mt-4">Table Kategori</h1>
 <ol class="breadcrumb mb-4">
 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -8,7 +9,9 @@
 </ol>
 <div class="card mb-4">
 <div class="card-header">
+@if(Auth::user() -> role == 'admin')
 <a class="btn btn-primary" href="{{url('admin/kategoriCreate')}}">Create</a>
+@endif
 </div>
 <div class="card-body">
 <table id="datatablesSimple">
@@ -38,5 +41,9 @@
 </table>
 </div>
 </div>
-</div> 
+</div>
+@else
+
+@include('admin.access_denied')
+@endif 
 @endsection
