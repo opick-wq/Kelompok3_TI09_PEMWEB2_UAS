@@ -7,10 +7,11 @@ use App\Http\Controllers\kategori12;
 use App\Http\Controllers\produk12;
 use App\Http\Controllers\dashboard;
 use App\Http\Controllers\detailproduk;
+use App\Http\Controllers\HomeController;
 
 
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
     Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[dashboard::class, 'index'])->name('dashboard');
     Route::get('/produk', [produk12::class, 'index'])->name('produk');
@@ -48,10 +49,10 @@ Route::group(['middleware' => ['auth']], function(){
 |
 */
 
-Route::get('/homefrontend',[detailproduk::class, 'index'])->name('detailproduk');
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/homefrontend', [detailproduk::class, 'index']);
+Route::get('/after_register', function () {
+    return view('after_register');
 });
 
 Auth::routes();
