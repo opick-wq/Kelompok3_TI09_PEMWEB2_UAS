@@ -18,7 +18,7 @@ class produk12 extends Controller
     'kategori_produk.id')
     ->select('produk.*', 'kategori_produk.nama as nama_kategori')
     ->get();
-    return view('admin.produk', compact('produk'));
+    return view('admin.produk.index', compact('produk'));
     }
 
     /**
