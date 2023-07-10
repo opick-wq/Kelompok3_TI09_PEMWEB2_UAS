@@ -49,6 +49,7 @@
         <td>{{$p->nama_kategori}}</td>
         <td>
 <a href="{{url('admin/produkEdit/'.$p->id)}}"  class="btn btn-warning">Edit</a>
+<a href="{{url('admin/produkView/'.$p->id)}}"  class="btn btn-warning">View</a>
 <a href="{{url('admin/produkDelete/'.$p->id)}}" class="btn btn-danger">Delete</a>
 </td>
         </tr>

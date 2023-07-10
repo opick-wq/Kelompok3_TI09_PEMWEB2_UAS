@@ -52,10 +52,20 @@ class produk12 extends Controller
     /**
      * Display the specified resource.
      */
+   /**
+ * Display the specified resource.
+ */
     public function show(string $id)
     {
-        //
+    $produk = DB::table('produk')
+        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id')
+        ->select('produk.*', 'kategori_produk.nama as nama_kategori')
+        ->where('produk.id', $id)
+        ->first();
+
+    return view('admin.produk.view', compact('produk'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

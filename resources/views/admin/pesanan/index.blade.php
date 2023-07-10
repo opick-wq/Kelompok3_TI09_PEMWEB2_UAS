@@ -41,6 +41,7 @@
         <td>{{$p->nama_produk}}</td>
         <td>
 <a href="{{url('admin/pesananEdit/'.$p->id)}}"  class="btn btn-warning">Edit</a>
+<a href="{{url('admin/pesananView/'.$p->id)}}"  class="btn btn-warning">view</a>
 <a href="{{url('admin/pesananDelete/'.$p->id)}}" class="btn btn-danger">Delete</a>
 </td>
         </tr>

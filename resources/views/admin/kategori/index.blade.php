@@ -27,6 +27,7 @@
         <td>{{$p->nama}}</td>
         <td>
 <a href="{{url('admin/kategoriEdit/'.$p->id)}}"  class="btn btn-warning">Edit</a>
+<a href="{{url('admin/kategoriView/'.$p->id)}}"  class="btn btn-warning">View</a>
 <a href="{{url('admin/kategoriDelete/'.$p->id)}}" class="btn btn-danger">Delete</a>
 </td>
         </tr>

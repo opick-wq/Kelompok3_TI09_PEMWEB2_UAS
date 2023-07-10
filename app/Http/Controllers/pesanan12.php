@@ -56,7 +56,13 @@ class pesanan12 extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pesanan = DB::table('pesanan')
+        ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
+        ->select('pesanan.*', 'produk.nama as nama_produk')
+        ->where('pesanan.id', $id)
+        ->first();
+    
+    return view('admin.pesanan.view', compact('pesanan'));
     }
 
     /**

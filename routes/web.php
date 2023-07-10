@@ -25,6 +25,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/kategoriEdit/{id}', [kategori12::class, 'edit'])->name('kategoriedit');
     Route::get('/produkDelete/{id}', [produk12::class, 'destroy'])->name('produkDelete');
     Route::get('/pesananDelete/{id}', [pesanan12::class, 'destroy'])->name('pesananDelete');
+    Route::get('/pesananView/{id}', [pesanan12::class, 'show'])->name('pesananview');
+    Route::get('/produkView/{id}', [produk12::class, 'show'])->name('produkview');
+    Route::get('/kategoriView/{id}', [kategori12::class, 'show'])->name('kategoriview');
     Route::get('/kategoriDelete/{id}', [kategori12::class, 'destroy'])->name('kategoriDelete');
     Route::post('/produkStore', [produk12::class, 'store'])->name('produkStore');
     Route::post('/pesananStore', [pesanan12::class, 'store'])->name('pesananStore');
