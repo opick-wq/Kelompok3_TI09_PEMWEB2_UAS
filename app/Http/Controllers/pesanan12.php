@@ -20,7 +20,7 @@ class pesanan12 extends Controller
         'produk.id')
         ->select('pesanan.*', 'produk.nama as nama_produk')
         ->get();
-        return view('admin.pesanan', compact('pesanan'));
+        return view('admin.pesanan.index', compact('pesanan'));
         }
 
     /**

@@ -16,7 +16,7 @@ class kategori12 extends Controller
         $kategori = DB::table('kategori_produk')
         ->select('kategori_produk.*')
         ->get();
-        return view('admin.kategori', compact('kategori'));
+        return view('admin.kategori.index', compact('kategori'));
         }
 
     /**
