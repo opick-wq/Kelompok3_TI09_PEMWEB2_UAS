@@ -8,7 +8,7 @@
 </ol>
 <div class="card mb-4">
 <div class="card-header">
-<a class="btn btn-primary" href="{{url('admin4/kategoriCreate')}}">Create</a>
+<a class="btn btn-primary" href="{{url('admin/kategoriCreate')}}">Create</a>
 </div>
 <div class="card-body">
 <table id="datatablesSimple">
