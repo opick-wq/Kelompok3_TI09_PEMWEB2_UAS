@@ -44,7 +44,8 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header>
+            <img class="bg-primary" width="1899px" height="500px" src="https://img.freepik.com/premium-psd/delicious-coffee-sale-facebook-cover-banner-design-template_268949-37.jpg">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Shop in style</h1>
