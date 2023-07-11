@@ -1,10 +1,10 @@
+@extends('frontend.layout.app')
+@section('konten')
 <section class="ftco-section ftco-cart">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 ftco-animate">
-					<?php
-					require_once 'admin/dbuas.php';
-					?>
+				
 					<form method="POST" action="checkout.php">
 						<div class="form-group row">
 							<label for="tanggal" class="col-4 col-form-label">Tanggal Pesanan</label>
@@ -109,14 +109,7 @@
 									<!-- <input id="produk_id" name="produk_id" value="" type="text" class="form-control"> -->
 									<select class="form-control" name="produk_id" id="produk_id">
 										<option value="">Choose what you need!</option>
-										<?php
-										$sql = "SELECT id, nama FROM produk";
-										$stmt = $dbh->prepare($sql);
-										$stmt->execute();
-										while ($row = $stmt->fetch()) {
-											echo "<option value='" . $row['id'] . "'>" . $row['nama'] . "</option>";
-										}
-										?>
+								
 									</select>
 								</div>
 							</div>
@@ -130,3 +123,4 @@
 				</div>
 			</div>
 	</section>
+	@endsection

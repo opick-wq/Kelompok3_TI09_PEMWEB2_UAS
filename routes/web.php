@@ -8,6 +8,7 @@ use App\Http\Controllers\produk12;
 use App\Http\Controllers\dashboard;
 use App\Http\Controllers\detailproduk;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\form;
 
 
 
@@ -51,6 +52,7 @@ Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/homefrontend', [detailproduk::class, 'index']);
+Route::get('/form', [form::class, 'index']);
 Route::get('/after_register', function () {
     return view('after_register');
 });
