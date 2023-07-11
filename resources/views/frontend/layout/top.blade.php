@@ -1,55 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Shop Homepage - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{asset('frontend/css/styles.css')}}" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta description -->
+    <meta name="description"
+          content="ProLex product landing page template or product landing page template helps you easily create websites for your app or product,  landing page template form promotion and many more.">
+    <meta name="author" content="ThemeTags">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content=""/> <!-- website name -->
+    <meta property="og:site" content=""/> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content=""/> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""/> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""/> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article"/>
+
+    <!--title-->
+    <title>ProLex Product Landing Page Template</title>
+
+    <!--favicon icon-->
+    <link rel="icon" href="{{ asset('frontend') }}/assets/LoGoo.png" type="image/png" sizes="16x16">
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7COpen+Sans&display=swap"
+          rel="stylesheet">
+
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/bootstrap.min.css">
+    <!--Magnific popup css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/magnific-popup.css">
+    <!--Themify icon css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/themify-icons.css">
+    <!--flaticon css-->
+    <link rel="stylesheet" type="text/css" href="fonts/flaticon.css">
+    <!--animated css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/animate.min.css">
+    <!--ytplayer css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/jquery.mb.YTPlayer.min.css">
+    <!--Owl carousel css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/owl.theme.default.min.css">
+    <!--custom css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/style.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="http://prolex.themetags.com/css/responsive.css">
+
+</head>
+<body>
+
+<!--header section start-->
+<header class="header">
+    <!--start navbar-->
+    <nav id="nav" class="navbar navbar-expand-lg fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('frontend') }}/assets/LoGoo.png" width="120" alt="logo"
+                                                           class="img-fluid"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ti-menu"></span>
+            </button>
+
+            <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link page-scroll dropdown-toggle" href="#" id="navbarDropdownHome" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Home
+                        </a>
+                        <div class="dropdown-menu submenu" aria-labelledby="navbarDropdownHome">
+                            <a class="dropdown-item" href="index.html">Demo Template 1</a>
+                            <a class="dropdown-item" href="index-2.html">Demo Template 2</a>
+                            <a class="dropdown-item" href="index-3.html">Demo Template 3</a>
+                            <a class="dropdown-item" href="index-4.html">Demo Template 4</a>
+                            <a class="dropdown-item" href="index-5.html">Demo Template 5</a>
+                            <a class="dropdown-item" href="index-6.html">Demo Template 6</a>
+                            <a class="dropdown-item" href="index-7.html">Demo Template 7</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#specs">Specs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#product">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#faq">Faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-        <!-- Header-->
-        <header>
-            <img class="bg-primary" width="1899px" height="500px" src="https://img.freepik.com/premium-psd/delicious-coffee-sale-facebook-cover-banner-design-template_268949-37.jpg">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
-            </div>
-        </header>
+        </div>
+    </nav>
+    <!--end navbar-->
+</header>
+<!--header section end-->
