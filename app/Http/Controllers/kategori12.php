@@ -16,7 +16,7 @@ class kategori12 extends Controller
         $kategori = DB::table('kategori_produk')
         ->select('kategori_produk.*')
         ->get();
-        return view('admin.kategori', compact('kategori'));
+        return view('admin.kategori.index', compact('kategori'));
         }
 
     /**
@@ -39,13 +39,16 @@ class kategori12 extends Controller
         return redirect('admin/kategori');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
-        //
+        $kategori = DB::table('kategori_produk')
+            ->select('kategori_produk.*')
+            ->where('kategori_produk.id', $id)
+            ->first();
+         return view('admin.kategori.view', compact('kategori'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

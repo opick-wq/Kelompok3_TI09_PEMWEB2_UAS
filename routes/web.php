@@ -7,10 +7,11 @@ use App\Http\Controllers\kategori12;
 use App\Http\Controllers\produk12;
 use App\Http\Controllers\dashboard;
 use App\Http\Controllers\detailproduk;
+use App\Http\Controllers\HomeController;
 
 
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
     Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[dashboard::class, 'index'])->name('dashboard');
     Route::get('/produk', [produk12::class, 'index'])->name('produk');
@@ -25,6 +26,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/kategoriEdit/{id}', [kategori12::class, 'edit'])->name('kategoriedit');
     Route::get('/produkDelete/{id}', [produk12::class, 'destroy'])->name('produkDelete');
     Route::get('/pesananDelete/{id}', [pesanan12::class, 'destroy'])->name('pesananDelete');
+    Route::get('/pesananView/{id}', [pesanan12::class, 'show'])->name('pesananview');
+    Route::get('/produkView/{id}', [produk12::class, 'show'])->name('produkview');
+    Route::get('/kategoriView/{id}', [kategori12::class, 'show'])->name('kategoriview');
     Route::get('/kategoriDelete/{id}', [kategori12::class, 'destroy'])->name('kategoriDelete');
     Route::post('/produkStore', [produk12::class, 'store'])->name('produkStore');
     Route::post('/pesananStore', [pesanan12::class, 'store'])->name('pesananStore');
@@ -45,10 +49,10 @@ Route::group(['middleware' => ['auth']], function(){
 |
 */
 
-Route::get('/homefrontend',[detailproduk::class, 'index'])->name('detailproduk');
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/homefrontend', [detailproduk::class, 'index']);
+Route::get('/after_register', function () {
+    return view('after_register');
 });
 
 Auth::routes();
