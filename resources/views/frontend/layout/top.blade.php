@@ -20,7 +20,7 @@
     <meta property="og:type" content="article"/>
 
     <!--title-->
-    <title>ProLex Product Landing Page Template</title>
+    <title>FastCoffe</title>
 
     <!--favicon icon-->
     <link rel="icon" href="{{ asset('frontend') }}/assets/LoGoo.png" type="image/png" sizes="16x16">
