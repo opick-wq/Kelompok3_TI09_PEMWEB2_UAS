@@ -26,11 +26,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/matca.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Matcha Latte</h4>
+                                <h4 class="mb-1">{{ $produk[0]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$5.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[0]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -38,11 +38,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/caramel.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Caramel Macchiato</h4>
+                            <h4 class="mb-1">{{ $produk[1]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$8.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[1]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -50,11 +50,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/Americano.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Caffe Americano</h4>
+                            <h4 class="mb-1">{{ $produk[2]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$6.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[2]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/Asian Dolce Latte.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Asian Dolce Latte</h4>
+                            <h4 class="mb-1">{{ $produk[3]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$7.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[3]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -74,11 +74,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/Cappuccino.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Cappuccino</h4>
+                            <h4 class="mb-1">{{ $produk[4]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$8.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[4]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -86,11 +86,11 @@
                         <div class="single-product rounded border">
                             <img src="{{ asset('frontend') }}/assets/Cafe Expresso.png" class="rounded" alt="product"/>
                             <div class="product-info text-center pb-4 px-3">
-                                <h4 class="mb-1">Cafe Expresso</h4>
+                            <h4 class="mb-1">{{ $produk[5]->nama }}</h4>
                                 <h5 class="product-price">
-                                    <del>$10.00</del>
-                                    <span>$6.00</span></h5>
-                                <a href="#" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Buy Now</a>
+                                    <del>RP.20000</del>
+                                    <span>RP.{{ $produk[5]->harga_jual }}</span></h5>
+                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
