@@ -123,7 +123,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="offset-4 col-8">
-								<input type="submit" name="proses" type="submit" class="btn btn-primary" value="Buy Now">
+								<input type="submit" name="proses" type="submit" class="btn btn-primary" value="Buy">
 							</div>
 						</div>
 					</form>
