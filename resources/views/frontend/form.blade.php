@@ -1,126 +1,64 @@
 @extends('frontend.layout.app')
 @section('konten')
-<section class="ftco-section ftco-cart">
+<section class="banner-area">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 ftco-animate">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				
-					<form method="POST" action="checkout.php">
-						<div class="form-group row">
-							<label for="tanggal" class="col-4 col-form-label">Tanggal Pesanan</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-anchor"></i>
-										</div>
-									</div> -->
-									<input id="tanggal" name="tanggal" type="date" class="form-control" value="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="nama_pemesan" class="col-4 col-form-label">Nama Pemesan</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-adjust"></i>
-										</div>
-									</div> -->
-									<input id="nama_pemesan" name="nama_pemesan" type="text" class="form-control" value="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="alamat_pemesan" class="col-4 col-form-label">Alamat</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-adjust"></i>
-										</div>
-									</div> -->
-									<input id="alamat_pemesan" name="alamat_pemesan" type="text" class="form-control" value="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="no_hp" class="col-4 col-form-label">Nomor Handphone</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-arrow-circle-up"></i>
-										</div>
-									</div> -->
-									<input id="no_hp" name="no_hp" value="" type="text" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="email" class="col-4 col-form-label">Email</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-arrow-circle-up"></i>
-										</div>
-									</div> -->
-									<input id="email" name="email" value="" type="email" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="jumlah_pesanan" class="col-4 col-form-label">Jumlah Pesanan</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-arrow-circle-up"></i>
-										</div>
-									</div> -->
-									<input id="jumlah_pesanan" name="jumlah_pesanan" value="" type="text" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="deskripsi" class="col-4 col-form-label">Deskripsi Pesanan</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-arrow-circle-up"></i>
-										</div>
-									</div> -->
-									<textarea name="deskripsi" id="deskripsi" cols="100" rows="5"></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="produk_id" class="col-4 col-form-label">Produk ID</label>
-							<div class="col-8">
-								<div class="input-group">
-									<!-- <div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-arrow-circle-up"></i>
-										</div>
-									</div> -->
-									<!-- <input id="produk_id" name="produk_id" value="" type="text" class="form-control"> -->
-									<select class="form-control" name="produk_id" id="produk_id">
-										<option value="">Choose what you need!</option>
-								
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="offset-4 col-8">
-								<input type="submit" name="proses" type="submit" class="btn btn-primary" value="Buy Now">
-							</div>
-						</div>
-					</form>
-				</div>
 			</div>
+		</div>
 	</section>
-	@endsection
+<section class="checkout_area section_gap">
+        <div class="container">
+            <div class="billing_details">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Form Pemesanan</h3>
+                        <form class="row contact_form" method="POST" action="{{url('/formstore')}}" enctype="multipart/form-data" >
+{{ csrf_field() }}
+                            <div class="col-md-12 form-group p_star">
+                                <input type="date" class="form-control"  name="tanggal" value="" placeholder="Masukkan tanggal">
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input placeholder="Nama" type="text" class="form-control"  name="nama_pemesan" value="">
+                            </div>
+                            <div class="col-md-6 form-group p_star">
+                                <input type="text" placeholder="No Hp" class="form-control" id="no_hp" name="no_hp" value="">
+        
+                            </div>
+                            <div class="col-md-6 form-group p_star">
+                                <input placeholder="Email" type="text" class="form-control" id="email" name="email" value="">
+                            
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input placeholder="Alamat" type="text" class="form-control" id="alamat_pemesan" name="alamat_pemesan" value="">
+            
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" name="deskripsi" value="">
+                            </div>
+                           
+                            <div class="col-md-12 form-group">
+                                    <h3>Pilih Produk Coffe yang ingin dibeli</h3>   
+                          
+      <select id="jenis" name="produk_id" class="country_select">
+	  @foreach ($produk as $d) 
+      <option value="{{$d->id}}">{{$d->nama}}</option>
+        @endforeach
+      </select>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" id="jumlah Pesanan" name="jumlah_pesanan" placeholder="Jumlah Pesanan" value="">
+                            </div>
+    <div class="col-12">
+      <input type="submit" name="proses" type="submit" 
+      class="btn btn-success" value="pesan">
+  </div>
+
+  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

@@ -3,40 +3,7 @@
 <!--body content wrap start-->
 <div class="main">
 
-    <!--hero section start-->
-    <section class="hero-section ptb-100 background-img"
-             style="background: url('{{ asset('frontend') }}/assets/SPECIAL.png')no-repeat center center / cover">
-        <div class="container">
-            <div class="row align-items-center justify-content-between py-4">
-                <div class="col-md-7 col-lg-6">
-                    <div class="hero-content-left text-white">
-                        <h1 class="text-white"><font style="color:yellow">Coffe </font>That
-                        Inspires</h1>
-                        <p class="lead">
-                        Work can wait, smooth out your day , everyday
-                        </p>
-                        
-                        <!--core feature list end-->
-                    </div>
-                </div>
-                <div class="col-md-5 col-lg-5">
-                    <div class="hero-animation-img">
-                        <img src="{{ asset('frontend') }}/assets/LOGO.png" alt="app" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--hero section end-->
-
-    <!--promo section start-->
-    
-
-    <!--about us section start-->
-    
-
-   
-
+  
     
 
     

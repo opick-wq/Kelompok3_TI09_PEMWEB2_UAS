@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
+use App\Models\KategoriProduk;
+use App\Models\Pesanan11;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class form extends Controller
@@ -11,7 +15,13 @@ class form extends Controller
      */
     public function index()
     {
-        return view('frontend.form');
+        $produk = Produk::all();
+        $pesanan = DB::table('pesanan')
+        ->join('produk', 'pesanan.produk_id', '=',
+        'produk.id')
+        ->select('pesanan.*', 'produk.nama as nama_produk')
+        ->get();
+        return view('frontend.form', compact('pesanan'));
     }
 
     /**
@@ -19,7 +29,9 @@ class form extends Controller
      */
     public function create()
     {
-        //
+        $produk = Produk::all();
+        $pesanan = Pesanan11::all();
+        return view('frontend.form', compact('produk', 'pesanan'));
     }
 
     /**
@@ -27,7 +39,17 @@ class form extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pesanan = new Pesanan11;
+        $pesanan->tanggal = $request->tanggal;
+        $pesanan->nama_pemesan = $request->nama_pemesan;
+        $pesanan->alamat_pemesan = $request->alamat_pemesan;
+        $pesanan->no_hp = $request->no_hp;
+        $pesanan->email = $request->email;
+        $pesanan->jumlah_pesanan = $request->jumlah_pesanan;
+        $pesanan->deskripsi = $request->deskripsi;
+        $pesanan->produk_id = $request->produk_id;
+        $pesanan->save();
+        return redirect('/form');
     }
 
     /**

@@ -9,6 +9,7 @@ use App\Http\Controllers\dashboard;
 use App\Http\Controllers\detailproduk;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\form;
+use App\Http\Controllers\kontak;
 
 
 
@@ -52,7 +53,9 @@ Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/homefrontend', [detailproduk::class, 'index']);
-Route::get('/form', [form::class, 'index']);
+Route::get('/form', [form::class, 'create']);
+Route::get('/kontak', [kontak::class, 'index']);
+Route::post('/formstore', [form::class, 'store']);
 Route::get('/after_register', function () {
     return view('after_register');
 });
