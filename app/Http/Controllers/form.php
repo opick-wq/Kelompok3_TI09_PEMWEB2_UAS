@@ -49,7 +49,7 @@ class form extends Controller
         $pesanan->deskripsi = $request->deskripsi;
         $pesanan->produk_id = $request->produk_id;
         $pesanan->save();
-        return redirect('/form');
+        return redirect('frontend/sukses');
     }
 
     /**

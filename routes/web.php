@@ -13,6 +13,7 @@ use App\Http\Controllers\kontak;
 use App\Http\Controllers\produk;
 use App\Http\Controllers\banyak;
 use App\Http\Controllers\terbaru;
+use App\Http\Controllers\sukses;
 
 
 
@@ -63,6 +64,7 @@ Route::group(['middleware' => ['auth', 'role:admin-manager-pelanggan']], functio
         Route::get('/banyak', [banyak::class, 'index']);
         Route::get('/terbaru', [terbaru::class, 'index']);
         Route::post('/formstore', [form::class, 'store']);
+        Route::get('/sukses', [sukses::class, 'index']);
     });
 });
 
@@ -71,6 +73,7 @@ Route::get('/after_register', function () {
     return view('after_register');
 });
 Route::get('/', [HomeController::class, 'index']);
+
 
 Auth::routes();
 

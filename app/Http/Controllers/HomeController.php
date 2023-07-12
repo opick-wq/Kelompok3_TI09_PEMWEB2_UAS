@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         if (auth()->user()->role == 'manager' || auth()->user()->role == 'admin') {
-            return redirect('/homefrontend');
+            return redirect('frontend/homefrontend');
         } else if (auth()->user()->role == 'pelanggan') {
             return redirect('frontend/homefrontend');
         } else {
