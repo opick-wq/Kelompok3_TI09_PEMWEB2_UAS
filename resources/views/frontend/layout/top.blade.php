@@ -48,6 +48,11 @@
     <link rel="stylesheet" href="http://prolex.themetags.com/css/style.css">
     <!--responsive css-->
     <link rel="stylesheet" href="http://prolex.themetags.com/css/responsive.css">
+
+    <link rel="stylesheet" href="{{asset('main.css')}}">
+
+    
+
     <style>
     #kontak {
       background-color: #f9f9f9;
@@ -99,6 +104,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="{{url('/form')}}">Form Pesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{url('/produk')}}">Kategori Produk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="{{url('/kontak')}}">Kontak Kami</a>
