@@ -26,7 +26,7 @@ class HomeController extends Controller
         if (auth()->user()->role == 'manager' || auth()->user()->role == 'admin') {
             return redirect('/homefrontend');
         } else if (auth()->user()->role == 'pelanggan') {
-            return redirect('/homefrontend');
+            return redirect('frontend/homefrontend');
         } else {
             return redirect('/login');
         }
