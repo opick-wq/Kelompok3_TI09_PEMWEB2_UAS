@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h3>Form Pemesanan</h3>
-                        <form class="row contact_form" method="POST" action="{{url('/formstore')}}" enctype="multipart/form-data" >
+                        <form class="row contact_form" method="POST" action="{{url('frontend/formstore')}}" enctype="multipart/form-data" >
 {{ csrf_field() }}
                             <div class="col-md-12 form-group p_star">
                                 <input type="date" class="form-control"  name="tanggal" value="" placeholder="Masukkan tanggal">

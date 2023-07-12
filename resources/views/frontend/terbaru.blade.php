@@ -13,10 +13,10 @@
 				<div class="sidebar-categories">
 					<div>Cari bedasarkan kategori</div>
 					<ul class="main-categories">
-						<li class="main-nav-list"><a class="nav-link" href="{{url('/banyak')}}">Banyak Disukai</a>
+						<li class="main-nav-list"><a class="nav-link" href="{{url('frontend/banyak')}}">Banyak Disukai</a>
 						</li>
 
-						<li class="main-nav-list"><a class="nav-link" href="{{url('/terbaru')}}">Terbaru</a>
+						<li class="main-nav-list"><a class="nav-link" href="{{url('frontend/terbaru')}}">Terbaru</a>
 						</li>
 					</ul>
 				</div>
@@ -65,7 +65,7 @@
 								<div class="price">
 						</div>
 								<div class="prd-bottom">
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
 								</div>
 							</div>
 						</div>
@@ -83,7 +83,7 @@
 								<div class="price">
 						</div>
 								<div class="prd-bottom">
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
 								</div>
 							</div>
 						</div>
@@ -101,7 +101,7 @@
 								<div class="price">
 						</div>
 								<div class="prd-bottom">
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
 								</div>
 							</div>
 						</div>

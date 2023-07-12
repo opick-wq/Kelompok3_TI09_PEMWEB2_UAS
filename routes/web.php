@@ -54,17 +54,23 @@ Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/homefrontend', [detailproduk::class, 'index']);
-Route::get('/form', [form::class, 'create']);
-Route::get('/produk', [produk::class, 'index']);
-Route::get('/kontak', [kontak::class, 'index']);
-Route::get('/banyak', [banyak::class, 'index']);
-Route::get('/terbaru', [terbaru::class, 'index']);
-Route::post('/formstore', [form::class, 'store']);
+Route::group(['middleware' => ['auth', 'role:admin-manager-pelanggan']], function(){
+    Route::prefix('frontend')->group(function () {
+        Route::get('/homefrontend', [detailproduk::class, 'index']);
+        Route::get('/form', [form::class, 'create']);
+        Route::get('/produk', [produk::class, 'index']);
+        Route::get('/kontak', [kontak::class, 'index']);
+        Route::get('/banyak', [banyak::class, 'index']);
+        Route::get('/terbaru', [terbaru::class, 'index']);
+        Route::post('/formstore', [form::class, 'store']);
+    });
+});
+
+
 Route::get('/after_register', function () {
     return view('after_register');
 });
+Route::get('/', [HomeController::class, 'index']);
 
 Auth::routes();
 

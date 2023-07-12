@@ -100,16 +100,16 @@
             <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{url('/homefrontend')}}">Home</a>
+                        <a class="nav-link page-scroll" href="{{url('frontend/homefrontend')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{url('/form')}}">Form Pesanan</a>
+                        <a class="nav-link page-scroll" href="{{url('frontend/form')}}">Form Pesanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{url('/produk')}}">Kategori Produk</a>
+                        <a class="nav-link page-scroll" href="{{url('frontend/produk')}}">Kategori Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{url('/kontak')}}">Kontak Kami</a>
+                        <a class="nav-link page-scroll" href="{{url('frontend/kontak')}}">Kontak Kami</a>
                     </li>
                     <li class="nav-item">
                     <a class="dropdown-item" href="{{ route('logout') }}"

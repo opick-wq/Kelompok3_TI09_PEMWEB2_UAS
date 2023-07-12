@@ -30,7 +30,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[0]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[1]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span>Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[2]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[3]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[4]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                                 <h5 class="product-price">
                                     <del>RP.20000</del>
                                     <span>RP.{{ $produk[5]->harga_jual }}</span></h5>
-                                <a href="{{url('/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
+                                <a href="{{url('frontend/form')}}" class="btn secondary-btn"><span class="ti-shopping-cart"></span> Pesan</a>
                             </div>
                         </div>
                     </div>
