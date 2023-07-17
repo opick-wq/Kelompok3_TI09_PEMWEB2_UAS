@@ -20,7 +20,7 @@ class pesanan12 extends Controller
         'produk.id')
         ->select('pesanan.*', 'produk.nama as nama_produk')
         ->get();
-        return view('praktikum12.admin.pesanan', compact('pesanan'));
+        return view('admin.pesanan.index', compact('pesanan'));
         }
 
     /**
@@ -30,7 +30,7 @@ class pesanan12 extends Controller
     {
         $produk = Produk::all();
         $pesanan = Pesanan11::all();
-        return view('praktikum12.admin.pesananCreate', compact('produk', 'pesanan'));
+        return view('admin.pesanan.create', compact('produk', 'pesanan'));
     }
 
     /**
@@ -48,7 +48,7 @@ class pesanan12 extends Controller
         $pesanan->deskripsi = $request->deskripsi;
         $pesanan->produk_id = $request->produk_id;
         $pesanan->save();
-        return redirect('admin4/pesanan');
+        return redirect('admin/pesanan');
     }
 
     /**
@@ -56,7 +56,13 @@ class pesanan12 extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pesanan = DB::table('pesanan')
+        ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
+        ->select('pesanan.*', 'produk.nama as nama_produk')
+        ->where('pesanan.id', $id)
+        ->first();
+    
+    return view('admin.pesanan.view', compact('pesanan'));
     }
 
     /**
@@ -67,7 +73,7 @@ class pesanan12 extends Controller
         $produk = Produk::all();
         $p = Pesanan11::find($id);
     
-        return view('praktikum12.admin.pesananUpdate', compact('p', 'produk'));
+        return view('admin.pesanan.update', compact('p', 'produk'));
     }
 
     /**
@@ -85,7 +91,7 @@ class pesanan12 extends Controller
         $pesanan->deskripsi = $request->deskripsi;
         $pesanan->produk_id = $request->produk_id;
         $pesanan->save();
-        return redirect('admin4/pesanan');
+        return redirect('admin/pesanan');
     }
 
     /**
@@ -94,6 +100,6 @@ class pesanan12 extends Controller
     public function destroy(string $id)
     {
         DB::table('pesanan')->where('id', $id)->delete();
-        return redirect('admin4/pesanan');
+        return redirect('admin/pesanan');
     }
 }

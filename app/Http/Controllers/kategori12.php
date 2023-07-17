@@ -16,7 +16,7 @@ class kategori12 extends Controller
         $kategori = DB::table('kategori_produk')
         ->select('kategori_produk.*')
         ->get();
-        return view('praktikum12.admin.kategori', compact('kategori'));
+        return view('admin.kategori.index', compact('kategori'));
         }
 
     /**
@@ -25,7 +25,7 @@ class kategori12 extends Controller
     public function create()
     {
         $kategori = KategoriProduk::all();
-        return view('praktikum12.admin.kategoriCreate', compact('kategori'));
+        return view('admin.kategori.create', compact('kategori'));
     }
 
     /**
@@ -36,16 +36,19 @@ class kategori12 extends Controller
         $kategori = new KategoriProduk;
         $kategori->nama = $request->nama;
         $kategori->save();
-        return redirect('admin4/kategori');
+        return redirect('admin/kategori');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
-        //
+        $kategori = DB::table('kategori_produk')
+            ->select('kategori_produk.*')
+            ->where('kategori_produk.id', $id)
+            ->first();
+         return view('admin.kategori.view', compact('kategori'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -54,7 +57,7 @@ class kategori12 extends Controller
     {
         $p = KategoriProduk::find($id);
     
-        return view('praktikum12.admin.kategoriUpdate', compact('p'));
+        return view('admin.kategori.update', compact('p'));
     }
 
     /**
@@ -67,7 +70,7 @@ class kategori12 extends Controller
         $kategori->nama = $request->nama;
     
         $kategori->save();
-        return redirect('admin4/kategori');
+        return redirect('admin/kategori');
     }
 
     /**
@@ -76,6 +79,6 @@ class kategori12 extends Controller
     public function destroy(string $id)
     {
         DB::table('kategori_produk')->where('id', $id)->delete();
-        return redirect('admin4/kategori');
+        return redirect('admin/kategori');
     }
 }

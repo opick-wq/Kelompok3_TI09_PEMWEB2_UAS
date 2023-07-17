@@ -18,7 +18,7 @@ class produk12 extends Controller
     'kategori_produk.id')
     ->select('produk.*', 'kategori_produk.nama as nama_kategori')
     ->get();
-    return view('praktikum12.admin.produk', compact('produk'));
+    return view('admin.produk.index', compact('produk'));
     }
 
     /**
@@ -28,7 +28,7 @@ class produk12 extends Controller
     {
         $kategori_produk = KategoriProduk::all();
         $produk = Produk::all();
-        return view('praktikum12.admin.produkCreate', compact('kategori_produk', 'produk'));
+        return view('admin.produk.create', compact('kategori_produk', 'produk'));
     }
 
     /**
@@ -46,16 +46,26 @@ class produk12 extends Controller
         $produk->deskripsi = $request->deskripsi;
         $produk->kategori_produk_id = $request->kategori_produk_id;
         $produk->save();
-        return redirect('admin4/produk');
+        return redirect('admin/produk');
     }
 
     /**
      * Display the specified resource.
      */
+   /**
+ * Display the specified resource.
+ */
     public function show(string $id)
     {
-        //
+    $produk = DB::table('produk')
+        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id')
+        ->select('produk.*', 'kategori_produk.nama as nama_kategori')
+        ->where('produk.id', $id)
+        ->first();
+
+    return view('admin.produk.view', compact('produk'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +75,7 @@ class produk12 extends Controller
         $kategori = KategoriProduk::all();
         $p = Produk::find($id);
     
-        return view('praktikum12.admin.produkUpdate', compact('p', 'kategori'));
+        return view('admin.produk.update', compact('p', 'kategori'));
     }
 
     /**
@@ -84,12 +94,12 @@ class produk12 extends Controller
         $produk->kategori_produk_id = $request->kategori_produk_id;
         $produk->save();
 
-        return redirect('admin4/produk');
+        return redirect('admin/produk');
     }
 
     public function destroy(string $id)
     {
         DB::table('produk')->where('id', $id)->delete();
-        return redirect('admin4/produk');
+        return redirect('admin/produk');
     }
 }
